@@ -1,24 +1,18 @@
-import { useState } from 'react'
-import './App.css'
-import { ThemeProvider } from '@emotion/react'
-import theme from "../themes/theme"
-import useContentful from "./hooks/useContentful"
-import { RichText } from "./components/RichText"
-import { Typography } from 'antd';
-
-const { Title } = Typography;
+import { Route, Routes } from 'react-router-dom'
+import { Home } from './pages/Home'
+import { About } from './pages/About'
+import { Media } from './pages/Media'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const { blog } = useContentful();
-
-
-  console.log(blog, "blog")
   return (
-    <ThemeProvider theme={theme}>
-      <Title>{blog?.title}</Title>
-       <RichText richTextDocument={blog?.body}></RichText>
-    </ThemeProvider>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/media" element={<Media />} />
+      </Routes>
+    </>
   )
 }
 

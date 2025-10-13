@@ -24,5 +24,19 @@ const client = contentful.createClient({
 
 export const blogApi = client
     .getEntries({ content_type: 'blogPost' })
-    .then(extractFields)
-    .then(parseArray);
+    //.then(extractFields)
+    .then((a) => {
+        return a
+    });
+export const websiteStaticTextApi = client
+    .getEntries({ content_type: 'websiteStaticText' })
+    //.then(extractFields)
+    .then((a) => {
+        return a
+    });
+export const websiteMediaApi = client
+    .getEntries({ content_type: 'videos' })
+    //.then(extractFields)
+    .then((a) => {
+        return a
+    });
