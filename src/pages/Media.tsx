@@ -11,17 +11,16 @@ export const Media = () => {
     if (!websiteMedia || !Object.keys(websiteMedia).length) {
         return null;
     }
-    console.log(websiteMedia, "websiteStaticText")
+    console.log(websiteMedia, "websiteMedia")
     return (
         <ThemeProvider theme={theme}>
-            <Text>heheh</Text>
             {(websiteMedia?.items).map((e: any) => {
                 console.log(e, "media items")
                 return (
                     <>
                         <Title>{e.fields.title}</Title>
                         <Image
-                            width={200}
+                            width={400}
                             src={e.fields.video.fields.file.url}
                         />
                     </>
