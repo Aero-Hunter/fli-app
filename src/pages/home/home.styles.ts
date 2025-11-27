@@ -1,21 +1,23 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
-export const Conatiner = styled.div`
+
+export const Container = styled.div`
 display:flex;
 flex-direction:column;
-height:${window.innerHeight}px
+margin-bottom: 40px;
+min-height:100%;
+background-color:#efefef;
 `
 export const TitleContainer = styled.div`
-background-color:#f7f8f9;
+background-color:${({ theme }) => theme.colors.white};
 display:flex;
 flex-direction:column;
 align-items:center;
-height:100%;
+min-height:100%;
 `
 export const ContentContainer = styled.div`
-background-color:#ffffff;
 height:100%;
-display:flex;
+display:flex;\
 flex-direction:column;
 align-items:center;
 width:${window.innerWidth / 1.5}px;

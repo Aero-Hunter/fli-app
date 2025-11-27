@@ -40,3 +40,14 @@ export const websiteMediaApi = client
     .then((a) => {
         return a
     });
+export const homeContentApi = client
+    .getEntries({ content_type: 'homePageIntro' })
+    //.then(extractFields)
+    .then((a) => {
+        return a
+    });
+    export const sexGodContentApi = client
+    .getEntries({ content_type: 'sexGod' })
+    .then((a) => {
+        return a
+    });

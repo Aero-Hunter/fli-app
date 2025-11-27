@@ -1,5 +1,3 @@
-import { ThemeProvider } from '@emotion/react'
-import theme from "../../themes/theme"
 import useContentful from "../hooks/useContentful"
 import { Image, Typography } from 'antd';
 
@@ -11,22 +9,20 @@ export const Media = () => {
     if (!websiteMedia || !Object.keys(websiteMedia).length) {
         return null;
     }
-    console.log(websiteMedia, "websiteMedia")
-    return (
-        <ThemeProvider theme={theme}>
-            {(websiteMedia?.items).map((e: any) => {
-                console.log(e, "media items")
-                return (
-                    <>
-                        <Title>{e.fields.title}</Title>
-                        <Image
-                            width={400}
-                            src={e.fields.video.fields.file.url}
-                        />
-                    </>
-                )
-            })}
-        </ThemeProvider>
+    return (<>
+        {(websiteMedia?.items).map((item: object) => {
+            console.log(item, "media items")
+            return (
+                <>
+                    <Title>{item.fields.title}</Title>
+                    <Image
+                        width={400}
+                        src={item.fields.video.fields.file.url}
+                    />
+                </>
+            )
+        })}
+    </>
     )
 }
 

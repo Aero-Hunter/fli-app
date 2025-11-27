@@ -1,6 +1,7 @@
-import styled from 'styled-components';
-import { Input, Button, Space, Typography, Dropdown } from 'antd';
-
+import styled from '@emotion/styled';
+import { Input, Button, Space, Dropdown } from 'antd';
+import { DownOutlined } from '@ant-design/icons';
+import headerImage from '../../assets/HeaderImage.jpg';
 
 export const HeaderInputContainer = styled(Space.Compact)`
     width: 500px;
@@ -16,8 +17,7 @@ export const HeaderInput = styled(Input)`
 `;
 export const HeaderButton = styled(Button)`
     border-radius: 0px;
-    background-color:#c03936;
-    colorPrimaryHover:#55555e;
+    background-color:${({ theme }) => theme.colors.red100};
      height:49px;
      width:126px;
      border:none;
@@ -35,7 +35,7 @@ export const HeaderContainer = styled.div`
 export const DropdownButton = styled(Button)`
     border-radius: 0px;
     font-size:20px;
-    color:#000000;
+    color:${({ theme }) => theme.colors.black};
     height:100%;
     margin:0px;
 `;
@@ -46,7 +46,8 @@ export const HeaderBarContainer = styled.div`
     align-items:center;
 `;
 export const NewsletterHeaderSection = styled.div`
-    background-color:#3e4950;
+    background-image: url(${headerImage});
+    background-image-size: 1920*284;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -63,4 +64,7 @@ export const StyledTitle = styled.div`
 `
 export const DropdownMenu = styled(Dropdown)`
 border-radius:0px;
+`
+export const DownOutlinedStyled = styled(DownOutlined)`
+margin-top:5px;
 `
