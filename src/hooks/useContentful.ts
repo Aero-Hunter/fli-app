@@ -1,44 +1,33 @@
 import { useEffect, useState } from 'react';
 import {
-    blogApi,
-    websiteMediaApi,
-    websiteStaticTextApi,
     homeContentApi,
+    pageTypeApi,
     sexGodContentApi
 
 } from '../api/api';
+import type { ContentResponse } from '../types/contentTypes';
 
 const useContentful = () => {
-    const [blog, setBlogList] = useState([]);
-    const [websiteStaticText, setwebsiteStaticText] = useState([]);
-    const [websiteMedia, setWebsiteMedia] = useState([]);
-    const [homeContent, setHomeContent] = useState([]);
-    const [sexGodContent, setSexGodContent] = useState([]);
+    const [homeContent, setHomeContent] = useState<ContentResponse>();
+    const [sexGodContent, setSexGodContent] = useState<ContentResponse>();
+    const [pageType, setPageTypeApi] = useState<ContentResponse>();
 
     useEffect(() => {
-        blogApi.then((response) => {
-            setBlogList(response ?? {});
+        pageTypeApi.then((response:any) => {
+            setPageTypeApi(response ?? {});
         });
-        websiteStaticTextApi.then((response) => {
-            setwebsiteStaticText(response ?? {});
-        });
-        websiteMediaApi.then((response) => {
-            setWebsiteMedia(response ?? {});
-        });
-        homeContentApi.then((response) => {
+        homeContentApi.then((response:any) => {
             setHomeContent(response ?? {});
         });
-        sexGodContentApi.then((response) => {
+        sexGodContentApi.then((response:any) => {
             setSexGodContent(response ?? {});
         });
 
     }, []);
     return {
-        blog,
-        websiteStaticText,
-        websiteMedia,
         homeContent,
-        sexGodContent
+        sexGodContent,
+        pageType
     };
 };
 

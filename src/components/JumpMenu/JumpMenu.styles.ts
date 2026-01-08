@@ -4,7 +4,7 @@ import { Typography } from 'antd';
 const { Text } = Typography;
 
 export const MainContainer = styled.div`
-background-color:${({ theme }) => theme.colors.white};
+background-color:#ffffff;
 display:flex;
 flex-direction:column;
 border-radius: .25rem;

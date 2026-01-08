@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { contentfulConfig } from './api.config';
 
 export const parseArray = (array:any) =>
@@ -52,6 +53,9 @@ export const extractRichText = ({section, key = 'body'}:any) => {
 
 export const resolveDomainConfiguration = () => {
   const { hostname } = window.location;
+  if(!hostname){
+    throw Error(`Cannot find contentful configuration for this domain:${window.location}`)
+  }
 
   return contentfulConfig[hostname.replace('www.', '')];
 };

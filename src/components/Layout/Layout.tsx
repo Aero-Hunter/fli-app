@@ -1,12 +1,19 @@
-import { RichTextNew } from "../RichText/RichText";
-import { ContentContainer, MainContainer, StyledTitle, TitleContainer } from "./Layout.stlyles";
+import type { ContentResponsePageType1 } from "../../types/contentTypes";
+import Content from "../Content/Content";
+import Header from "../Header/Header";
+import { ContentContainer, Container } from "./Layout.styles";
 
 
-export const Layout = (content: object) => {
+interface LayoutProps{
+    content:ContentResponsePageType1;
+    title?:boolean;
+}
+
+export const Layout = ({content,title=true}: LayoutProps) => {
     return (
-        <MainContainer>
-    
-        </MainContainer>
+      <Container>
+            <ContentContainer><Header/><Content content={content} title={title}/></ContentContainer>
+        </Container>
     )
 }
 

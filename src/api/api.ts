@@ -1,9 +1,6 @@
 import * as contentful from 'contentful';
 import { log } from '../util/loggerUtil';
 import {
-    first,
-    extractFields,
-    parseArray,
     resolveDomainConfiguration,
 } from './api.helpers';
 
@@ -17,25 +14,8 @@ const client = contentful.createClient({
     ...contentfulConfig,
 });
 
-// export const globalApi = client
-//     .getEntries({ content_type: 'general' })
-//     .then(extractFields)
-//     .then(first);
-
-export const blogApi = client
-    .getEntries({ content_type: 'blogPost' })
-    //.then(extractFields)
-    .then((a) => {
-        return a
-    });
-export const websiteStaticTextApi = client
-    .getEntries({ content_type: 'websiteStaticText' })
-    //.then(extractFields)
-    .then((a) => {
-        return a
-    });
-export const websiteMediaApi = client
-    .getEntries({ content_type: 'videos' })
+    export const pageTypeApi = client
+    .getEntries({ content_type: 'pageType1' })
     //.then(extractFields)
     .then((a) => {
         return a

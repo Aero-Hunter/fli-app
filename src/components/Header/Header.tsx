@@ -1,45 +1,47 @@
-import { StyledTitle, NewsletterHeaderSection, HeaderInput, HeaderButton, HeaderContainer, HeaderInputContainer, HeaderBarContainer, DropdownButton, DropdownMenu, DownOutlinedStyled } from './Header.styles';
-import { useHeader } from './useHeader';
+// import { Dropdown } from 'antd';
+import { menuItems } from './Header.constants';
+import { DropDownButton, HeaderContainer } from './Header.styles';
+// import { DownOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
+
+interface MenuItemsProps {
+    name?:string;
+    route?:string;
+}
 
 
 
 export default function Header() {
     const navigate = useNavigate()
-    const { menuItems } = useHeader();
     return (
         <HeaderContainer>
-            <NewsletterHeaderSection>
-                <StyledTitle>Understanding Catholic views on Human Sexuality</StyledTitle>
-                <StyledTitle>Sign up to receive new FLI articles daily</StyledTitle>
-                <HeaderInputContainer >
-                    <HeaderInput placeholder="Your Email Address" />
-                    <HeaderButton type="primary">Subscribe</HeaderButton>
-                </HeaderInputContainer>
-            </NewsletterHeaderSection>
-            <HeaderBarContainer>
-                {menuItems.map(({ name, menuProps, route }, index) => {
-                    if (menuProps) {
-                        return (
-                            <DropdownMenu key={index} menu={menuProps}>
-                                <DropdownButton type="text">
-                                    {name}
-                                    <DownOutlinedStyled />
-                                </DropdownButton>
-                            </DropdownMenu>
-                        )
-                    } else {
+            {menuItems.map(({ name, route }:MenuItemsProps) => {
+                // if (index < menuItems.length - 3) {
+                    // if (menuProps) {
+                    //     return (
+                    //         <Dropdown menu={menuProps}>
+                    //             <a onClick={(e) => e.preventDefault()}>
+                    //                 <DropDownButton>
+                    //                     {name}
+                    //                     <DownOutlined />
+                    //                 </DropDownButton>
+                    //             </a>
+                    //         </Dropdown>
+                    //     )
+                    // } else {
                         return (
                             <>
-                                <DropdownButton type="text" onClick={() => navigate(`${route}`)}>
-                                    {name}
-                                </DropdownButton>
+                                <a onClick={() => navigate(`${route}`)}>
+                                    <DropDownButton>
+                                        {name}
+
+                                    </DropDownButton>
+                                </a>
                             </>
                         )
                     }
-
-                })}
-            </HeaderBarContainer>
+                // }
+            )}
         </HeaderContainer>
     )
 }

@@ -6,7 +6,9 @@ const theme = {
         white:"#ffffff",
         black:"#000000",
         red100:"#c03936",
-        grey200:"#222222"
+        grey200:"#222222",
+        button:"#000000",
+        buttonHover:"#7e7e7eff"
     }
 }
 
