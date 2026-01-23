@@ -1,1 +1,0 @@
-export const dummyContent= {title:"Sex & Salvation", subText:"Everything You Need to Know",primaryColor:"#ffca2a",color:"#0c3512"}

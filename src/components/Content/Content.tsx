@@ -1,29 +1,31 @@
-import { RichTextNew } from "../RichText/RichText";
-import { ContentContainer, ImageContainer, StyledImage, TextContainer } from "./Content.styles";
-import image from "../../assets/HeaderImage.jpg"
-import type { ContentResponse } from "../../types/contentTypes";
-import SubMenu from "../SubMenu/SubMenu";
-import PageTitle from "../PageTitle/PageTitle";
-import { dummyContent } from "../PageTitle/dummyContent";
+import { RichTextNew } from '../RichText/RichText'
+import {
+    ContentContainer,
+    ImageContainer,
+    TextContainer,
+} from './Content.styles'
+import SubMenu from '../SubMenu/SubMenu'
+import PageTitle from '../PageTitle/PageTitle'
+import { useProjectCtx } from '../../api/Ctx/useProjectCtx'
+import HeaderImage from '../HeaderImage/HeaderImage'
+import type { PageTypeOne } from '../../api/Ctx/Ctx.types'
 
-interface ContentProps{
-    content:ContentResponse;
-    title:boolean;
-}
-
-export default function Content({content,title}:ContentProps) {
+export default function Content() {
+    const { content, isLoading } = useProjectCtx<PageTypeOne>()
+    if (isLoading) {
+        return null
+    }
+    console.log(content, 'content')
     return (
-      <ContentContainer>
-        <SubMenu title={title?content.items[0].fields.title:"Home"}/>
-        <PageTitle titleData={dummyContent}/>
-        {/* { title?<StyledTitle>{content.items[0].fields.title}</StyledTitle>:null} */}
-        <ImageContainer>
-        <StyledImage src={image} preview={false}/>
-        </ImageContainer>
-        <TextContainer>
-        <RichTextNew content={content}/>
-        </TextContainer>
-      </ContentContainer>
+        <ContentContainer>
+            <SubMenu />
+            <PageTitle />
+            <ImageContainer>
+                {content.fields.image ? <HeaderImage /> : null}
+            </ImageContainer>
+            <TextContainer>
+                <RichTextNew />
+            </TextContainer>
+        </ContentContainer>
     )
 }
-

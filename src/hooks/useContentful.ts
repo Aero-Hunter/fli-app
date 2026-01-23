@@ -1,34 +1,17 @@
-import { useEffect, useState } from 'react';
-import {
-    homeContentApi,
-    pageTypeApi,
-    sexGodContentApi
-
-} from '../api/api';
-import type { ContentResponse } from '../types/contentTypes';
+import { useEffect, useState } from 'react'
+import { allEntriesApi } from '../api/api'
 
 const useContentful = () => {
-    const [homeContent, setHomeContent] = useState<ContentResponse>();
-    const [sexGodContent, setSexGodContent] = useState<ContentResponse>();
-    const [pageType, setPageTypeApi] = useState<ContentResponse>();
+    const [allEntries, setAllEntriesApi] = useState<any>()
 
     useEffect(() => {
-        pageTypeApi.then((response:any) => {
-            setPageTypeApi(response ?? {});
-        });
-        homeContentApi.then((response:any) => {
-            setHomeContent(response ?? {});
-        });
-        sexGodContentApi.then((response:any) => {
-            setSexGodContent(response ?? {});
-        });
-
-    }, []);
+        allEntriesApi.then((response: any) => {
+            setAllEntriesApi(response ?? {})
+        })
+    }, [])
     return {
-        homeContent,
-        sexGodContent,
-        pageType
-    };
-};
+        allEntries,
+    }
+}
 
-export default useContentful;
+export default useContentful

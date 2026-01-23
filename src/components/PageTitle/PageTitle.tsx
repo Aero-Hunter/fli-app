@@ -1,32 +1,52 @@
-import { MainContainer, TextContainer,Title,Text,EqualContainer } from "./PageTitle.styles";
+import type { PageTypeOne } from '../../api/Ctx/Ctx.types'
+import { useProjectCtx } from '../../api/Ctx/useProjectCtx'
+import {
+    MainContainer,
+    TextContainer,
+    Title,
+    Text,
+    EqualContainer,
+} from './PageTitle.styles'
 
-interface PageTitleProps {
-  titleData: {
-    title: string;
-    subText: string;
-    color:string;
-    primaryColor:string;
-  };
-}
-export default function PageTitle({titleData}:PageTitleProps) {
-    const title = ["Love","God","Be","Transformed"]
+export default function PageTitle() {
+    const { content } = useProjectCtx<PageTypeOne>()
+    console.log(content)
+    const title = content.fields.title
+    const subtitle = content.fields.subtitle
+    const titleStatic = ['Love', 'God', 'Be', 'Transformed']
     return (
         <MainContainer>
             <TextContainer>
                 <MainContainer>
-                {title.map((e)=>{
-                    return(
-                        
-                            <Title style={{color:`${titleData.color}`}}>{e}</Title>
-                       
-                    )
-                })}
-                 </MainContainer>
-                 <EqualContainer style={{color:`${titleData.color}`}}>=</EqualContainer>
-                <Title style={{color:`${titleData.primaryColor}`, alignSelf:"flex-end"}}>{titleData.title}</Title>
+                    {titleStatic.map((e) => {
+                        return (
+                            <Title
+                                style={{
+                                    color: content.fields.subtitleColor,
+                                }}
+                            >
+                                {e}
+                            </Title>
+                        )
+                    })}
+                </MainContainer>
+                <EqualContainer>=</EqualContainer>
+                <Title
+                    style={{
+                        color: content.fields.titleColorHex,
+                        alignSelf: 'flex-end',
+                    }}
+                >
+                    {title}
+                </Title>
             </TextContainer>
-            <Text style={{color:`${titleData.primaryColor}`}}>{titleData.subText}</Text>
+            <Text
+                style={{
+                    color: content.fields.titleColorHex,
+                }}
+            >
+                {subtitle}
+            </Text>
         </MainContainer>
     )
 }
-

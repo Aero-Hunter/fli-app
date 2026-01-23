@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
-import { pageCode, useProjectCtx } from '../../api/Ctx/useProjectCtx'
+import { subMenuPageCode, useProjectCtx } from '../../api/Ctx/useProjectCtx'
 import { Layout } from '../../components/Layout/Layout'
 
-export default function Home() {
+export default function ThreatsToManhood() {
     const { setCurrentPage } = useProjectCtx()
     useEffect(() => {
-        setCurrentPage(pageCode.SEX_AND_SALVATION)
+        setCurrentPage(subMenuPageCode.THREATS_TO_MANHOOD)
     })
     return <Layout />
 }

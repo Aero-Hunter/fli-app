@@ -1,14 +1,15 @@
-// import { Layout } from "../../components/Layout/Layout";
-// import useContentful from "../../hooks/useContentful"
+import { Layout } from '../../components/Layout/Layout'
+import { pageCode, useProjectCtx } from '../../api/Ctx/useProjectCtx'
+import { useEffect } from 'react'
 
-
-// export default function Manhood() {
-//     const { pageType } = useContentful();
-//     if (!pageType || !Object.keys(pageType).length) {
-//         return null;
-//     }
-//     console.log(pageType.items[9],"Page type 1")
-//     return (
-//       <><Layout content={pageType.items[9]}/></>
-//     )
-// }
+export default function Manhood() {
+      const { setCurrentPage } = useProjectCtx()
+        useEffect(() => {
+            setCurrentPage(pageCode.MANHOOD)
+        })
+    return (
+        <>
+            <Layout />
+        </>
+    )
+}
