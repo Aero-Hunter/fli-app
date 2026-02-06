@@ -1,11 +1,11 @@
 import { Layout } from '../../components/Layout/Layout'
-import { pageCode, useProjectCtx } from '../../api/Ctx/useProjectCtx'
+import { subMenuPageCode, useProjectCtx } from '../../api/Ctx/useProjectCtx'
 import { useEffect } from 'react'
 
-export default function ArteficialContraception() {
+export default function LivingWithHomosexuality() {
     const { setCurrentPage } = useProjectCtx()
     useEffect(() => {
-        setCurrentPage(pageCode.ARTIFICIAL_CONTRACEPTION)
+        setCurrentPage(subMenuPageCode.LIVING_WITH_HOMOSEXUALITY)
     })
     return (
         <>

@@ -9,17 +9,18 @@ import PageTitle from '../PageTitle/PageTitle'
 import { useProjectCtx } from '../../api/Ctx/useProjectCtx'
 import HeaderImage from '../HeaderImage/HeaderImage'
 import type { PageTypeOne } from '../../api/Ctx/Ctx.types'
+import StaticTitle from '../StaticTitle/StaticTitle'
 
 export default function Content() {
     const { content, isLoading } = useProjectCtx<PageTypeOne>()
     if (isLoading) {
         return null
     }
-    console.log(content, 'content')
     return (
         <ContentContainer>
-            <SubMenu />
+            <StaticTitle />
             <PageTitle />
+            <SubMenu />
             <ImageContainer>
                 {content.fields.image ? <HeaderImage /> : null}
             </ImageContainer>

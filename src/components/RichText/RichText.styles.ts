@@ -16,3 +16,8 @@ export const StyledText = styled(Text)`
     text-align: left;
     font-size: 15px;
 `
+export const StyledBoldText = styled(Text)`
+    color: #cc0000;
+    text-align: left;
+    font-size: 15px;
+`

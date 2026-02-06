@@ -8,7 +8,6 @@ export default function HeaderImage() {
     if (isLoading) {
         return null
     }
-    console.log(content, 'content')
     return (
         <StyledImage
             src={`${content.fields.image.fields.file.url}`}

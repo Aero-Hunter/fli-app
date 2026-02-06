@@ -1,37 +1,30 @@
 import { useProjectCtx } from '../../api/Ctx/useProjectCtx'
-import { StyledTitle, StyledText } from './RichText.styles'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { StyledTitle, StyledText, StyledBoldText } from './RichText.styles'
+import {
+    documentToReactComponents,
+    type Options,
+} from '@contentful/rich-text-react-renderer'
 import { BLOCKS, MARKS } from '@contentful/rich-text-types'
+import type { Document } from '@contentful/rich-text-types'
 
-interface Content {
-    nodeType: string
-    value: string
-    marks: string[]
-}
-interface Heading1RootProps {
-    nodeType: string
-    data: object
-    content: Content[]
-}
 export const RichTextNew = () => {
     const { content } = useProjectCtx()
-    const value = content.fields.content.content
-    const options = {
+    const value = content.fields.content
+
+    const options: Options = {
         renderNode: {
-            [BLOCKS.HEADING_1]: (item: Heading1RootProps) => {
-                const title = item.content[0].value
-                console.log(title, '<<title')
-                return <StyledTitle>{title}</StyledTitle>
+            [BLOCKS.HEADING_1]: (_node, children) => {
+                return <StyledTitle>{children}</StyledTitle>
             },
         },
         renderMark: {
-            [MARKS.ITALIC]: (text: string) => {
+            [MARKS.ITALIC]: (text) => {
                 return <StyledText italic>{text}</StyledText>
             },
-            [MARKS.BOLD]: (text: string) => {
-                return <StyledText strong>{text}</StyledText>
+            [MARKS.BOLD]: (text) => {
+                return <StyledBoldText strong>{text}</StyledBoldText>
             },
         },
     }
-    return value.map((item) => documentToReactComponents(item, options))
+    return documentToReactComponents(value as Document, options)
 }

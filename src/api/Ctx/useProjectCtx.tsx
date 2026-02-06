@@ -21,12 +21,12 @@ export const subMenuPageCode = {
     GOD_IS_THE_SOURCE: 'god_is_the_source',
     THREATS_TO_MANHOOD: 'threats_to_manhood',
     HOMOSEXUALITY_THREAT_TO_MANHOOD: 'homosexuality_threat_to_manhood',
-    FEMENISM_THREAT_TO_MANHOOD: 'femenism_threat_to_manhood',
+    Feminism_THREAT_TO_MANHOOD: 'feminism_threat_to_manhood',
     VICE_THREAT_TO_MANHOOD: 'vice_threat_to_manhood',
     INSEMINATION: 'insemination',
     //Below titles do no have any content yet
     THREATS_TO_WOMANHOOD: 'threats_to_womanhood',
-    FEMENISM: 'femenism',
+    Feminism: 'feminism',
     ABORTION: 'abortion',
     WORKDOM_SERFDOM: 'workdom_serfdom',
     WHY_MARRIAGE_MATTERS: 'why_marriage_matters',
@@ -39,6 +39,7 @@ export const subMenuPageCode = {
     SEX_AND_DISEASE: 'sex_and_disease',
     LIVING_WITH_HOMOSEXUALITY: 'living_with_homosexuality',
     JOHNS_CONVERSION: 'johns_conversion',
+    SEX_AND_DISGRACE: 'sex_and_disgrace',
     SEXUAL_EMPOWERMENT: 'sexual_empowerment',
     CATHOLIC_CHURCH_AND_HOMOSEXUALITY: 'catholic_church_and_homosexuality',
 }

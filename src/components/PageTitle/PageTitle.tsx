@@ -10,7 +10,6 @@ import {
 
 export default function PageTitle() {
     const { content } = useProjectCtx<PageTypeOne>()
-    console.log(content)
     const title = content.fields.title
     const subtitle = content.fields.subtitle
     const titleStatic = ['Love', 'God', 'Be', 'Transformed']

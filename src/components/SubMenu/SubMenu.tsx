@@ -20,7 +20,7 @@ export default function SubMenu() {
                 ({ label, key, route }: SubMenuItemProps) => {
                     return (
                         <StyledButton
-                            type="text"
+                            variant="outlined"
                             key={key}
                             onClick={() => navigate(route)}
                             disabled={route == currentPath}

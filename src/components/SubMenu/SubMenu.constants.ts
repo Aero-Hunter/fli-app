@@ -46,9 +46,9 @@ export const menuItems = [
                 route: '/Homosexuality',
             },
             {
-                label: 'Femenism as a Threat to Manhood',
+                label: 'Feminism as a Threat to Manhood',
                 key: '3',
-                route: '/FemenismAsThreatToManhood',
+                route: '/FeminismAsThreatToManhood',
             },
             {
                 label: 'Pornography & Vice as Threats to Manhood',
@@ -70,22 +70,22 @@ export const menuItems = [
             {
                 label: 'Threats to Womanhood',
                 key: '1',
-                route: '/about',
+                route: '/ThreatsToWomanhood',
             },
             {
-                label: 'Femenism',
+                label: 'Feminism',
                 key: '2',
-                route: '/about',
+                route: '/Feminism',
             },
             {
                 label: 'Arteficial Contraception & Abortion',
                 key: '3',
-                route: '/about',
+                route: '/ArteficialContraception',
             },
             {
                 label: 'Workdom & Serfdom',
                 key: '4',
-                route: '/about',
+                route: '/WorkdomAndSerfdom',
             },
         ],
     },
@@ -97,23 +97,23 @@ export const menuItems = [
             {
                 label: 'Why Marriage Matters',
                 key: '1',
-                route: '/about',
+                route: '/MarriageMatters',
             },
             {
                 label: 'Sex in Marriage',
                 key: '2',
-                route: '/about',
+                route: '/SexInMarriage',
             },
             {
                 label: 'Procreation',
                 key: '3',
-                route: '/about',
+                route: '/Procreation',
             },
-            {
-                label: 'Threats to Marriage',
-                key: '4',
-                route: '/about',
-            },
+            // {
+            //     label: 'Threats to Marriage',
+            //     key: '4',
+            //     route: '/ThreatsToMarriage',
+            // },
         ],
     },
     {
@@ -124,17 +124,17 @@ export const menuItems = [
             {
                 label: 'The Woman at the Well',
                 key: '1',
-                route: '/about',
+                route: '/WomanAtWell',
             },
             {
                 label: 'Fornication',
                 key: '2',
-                route: '/about',
+                route: '/Fornication',
             },
             {
                 label: 'Sexual Tyranny',
                 key: '3',
-                route: '/about',
+                route: '/SexualTyranny',
             },
         ],
     },
@@ -146,7 +146,7 @@ export const menuItems = [
             {
                 label: 'Sex & Disease',
                 key: '1',
-                route: '/about',
+                route: '/SexAndDisease',
             },
         ],
     },
@@ -154,48 +154,49 @@ export const menuItems = [
         name: 'The Natural Law & Sex',
         id: pageCode.THE_NATURAL_LAW,
         route: '/TheNaturalLaw',
-        subMenuItems: [
-            {
-                label: 'Sex Becomes a Scourge',
-                key: '1',
-                route: '/about',
-            },
-        ],
+        // subMenuItems: [
+        //     {
+        //         label: 'Sex Becomes a Scourge',
+        //         key: '1',
+        //         route: '/about',
+        //     },
+        // ],
     },
     {
-        name: 'Arteficial Contraception',
+        name: 'Artificial Contraception',
         id: pageCode.ARTIFICIAL_CONTRACEPTION,
-        route: '/ArteficialContraception',
+        route: '/ArtificialContraception',
     },
     {
         name: 'About John Cassidy',
-        route: '/about',
+        id: pageCode.ABOUT_JOHN_CASSIDY,
+        route: '/AboutJohnCassidy',
         subMenuItems: [
-            {
-                label: 'Living With Homosexuality',
-                key: '1',
-                route: '/about',
-            },
-            {
-                label: "John's Conversion",
-                key: '2',
-                route: '/about',
-            },
-            {
-                label: 'Sex & Grace or Disgrace',
-                key: '3',
-                route: '/about',
-            },
-            {
-                label: 'Sexual Empowerment',
-                key: '4',
-                route: '/about',
-            },
-            {
-                label: 'Catholic Church and Homosexuality',
-                key: '4',
-                route: '/about',
-            },
+            // {
+            //     label: 'Living With Homosexuality',
+            //     key: '1',
+            //     route: '/LivingWithHomosexuality',
+            // },
+            // {
+            //     label: "John's Conversion",
+            //     key: '2',
+            //     route: '/JohnsConversion',
+            // },
+            // {
+            //     label: 'Sex & Grace or Disgrace',
+            //     key: '3',
+            //     route: '/SexAndDisgrace',
+            // },
+            // {
+            //     label: 'Sexual Empowerment',
+            //     key: '4',
+            //     route: '/SexualEmpowerment',
+            // },
+            // {
+            //     label: 'Catholic Church and Homosexuality',
+            //     key: '5',
+            //     route: '/CatholicChurch',
+            // },
         ],
     },
 ]
