@@ -14,5 +14,6 @@ export const StyledButton = styled(Button)`
     color: #000000;
     margin: 0px;
     font-weight: 500;
-    margin-right:1rem;
+    margin-right: 1rem;
+    font-family: Marcellus;
 `

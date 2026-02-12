@@ -13,11 +13,14 @@ export const Title = styled.div`
     font-size: 30px;
     font-weight: 400;
     align-self: bottom;
+    font-family: Nothing You Could Do;
 `
 export const Text = styled.div`
     display: flex;
+    font-family: Nothing You Could Do;
 `
 export const EqualContainer = styled.div`
+    font-family: Nothing You Could Do;
     margin-right: 1rem;
     margin-left: 1rem;
     align-self: flex-end;

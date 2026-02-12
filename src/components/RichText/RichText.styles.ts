@@ -15,9 +15,11 @@ export const StyledText = styled(Text)`
     color: #222222;
     text-align: left;
     font-size: 15px;
+    font-family: Marcellus;
 `
 export const StyledBoldText = styled(Text)`
     color: #cc0000;
     text-align: left;
     font-size: 15px;
+    font-family: Nothing You Could Do;
 `

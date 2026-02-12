@@ -16,6 +16,9 @@ export const RichTextNew = () => {
             [BLOCKS.HEADING_1]: (_node, children) => {
                 return <StyledTitle>{children}</StyledTitle>
             },
+            [BLOCKS.PARAGRAPH]: (node, children) => (
+                <StyledText>{children}</StyledText>
+            ),
         },
         renderMark: {
             [MARKS.ITALIC]: (text) => {

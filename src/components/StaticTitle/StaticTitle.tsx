@@ -6,7 +6,8 @@ export default function StaticTitle() {
 const Title = styled.div`
     margin-top: 50px;
     display: flex;
-    font-size: 30px;
+    font-size: 36px;
     font-weight: 400;
     margin-bottom: 1rem;
+    font-family: Sedgwick Ave;
 `
